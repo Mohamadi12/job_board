@@ -1,8 +1,10 @@
+import Navbar from '@/components/general/Navbar'
 import React, { ReactNode } from 'react'
 
 const MainLayout = ({children}:Readonly<{children: ReactNode}>) => {
   return (
-    <div>
+    <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-8'>
+        <Navbar />
         {children}
     </div>
   )
