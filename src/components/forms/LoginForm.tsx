@@ -12,13 +12,13 @@ import { auth, signIn } from "@/app/utils/auth";
 import SubmitButton from "../general/SubmitButton";
 import { redirect } from "next/navigation";
 
-const LoginForm = async() => {
-    const session = await auth()
+const LoginForm = async () => {
+  const session = await auth();
 
-    if(session?.user){
-        return redirect('/')
-    }
-    
+  if (session?.user) {
+    return redirect("/");
+  }
+
   return (
     <div className="flex flex-col gap-6">
       <Card>
@@ -34,7 +34,7 @@ const LoginForm = async() => {
               action={async () => {
                 "use server";
                 await signIn("github", {
-                  redirectTo: "/",
+                  redirectTo: "/onboarding",
                 });
               }}
             >
@@ -49,12 +49,14 @@ const LoginForm = async() => {
                 icon={<Github />}
               />
             </form>
-            <form action={async () => {
+            <form
+              action={async () => {
                 "use server";
                 await signIn("google", {
-                  redirectTo: "/",
+                  redirectTo: "/onboarding",
                 });
-              }}>
+              }}
+            >
               {/* <Button variant="outline" className="w-full">
                 <Google />
                 Login with Google
