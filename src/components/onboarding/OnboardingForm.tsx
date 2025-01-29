@@ -6,6 +6,7 @@ import Logo from "../../../public/logo.jpg";
 import { Card, CardContent } from "../ui/card";
 import UserTypeSelection from "./UserTypeForm";
 import CompanyForm from "./CompanyForm";
+import JobSeekerForm from "./JobSeekerForm";
 
 type UserSelectionType = "company" | "jobSeeker" | null;
 
@@ -27,7 +28,7 @@ const OnboardingForm = () => {
         return userType === "company" ? (
           <CompanyForm />
         ) : (
-          <p>User is a job seeker</p>
+          <JobSeekerForm/>
         );
 
       default:
