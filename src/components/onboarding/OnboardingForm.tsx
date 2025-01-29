@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Logo from "../../../public/logo.jpg";
 import { Card, CardContent } from "../ui/card";
 import UserTypeSelection from "./UserTypeForm";
+import CompanyForm from "./CompanyForm";
 
 type UserSelectionType = "company" | "jobSeeker" | null;
 
@@ -24,7 +25,7 @@ const OnboardingForm = () => {
 
       case 2:
         return userType === "company" ? (
-          <p>User is a company</p>
+          <CompanyForm />
         ) : (
           <p>User is a job seeker</p>
         );
