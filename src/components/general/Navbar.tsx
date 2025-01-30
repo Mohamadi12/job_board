@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button, buttonVariants } from "../ui/button";
 import { ToggleTheme } from "./ToggleTheme";
 import { auth, signOut } from "@/app/utils/auth";
+import UserDropdown from "./UserDropdown";
 
 const Navbar = async () => {
   const session = await auth();
@@ -23,17 +24,19 @@ const Navbar = async () => {
           Nana<span className="text-primary">Mohamadi</span>
         </h1>
       </Link>
-      <div className="flex gap-4 items-center justify-center">
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center gap-5">
         <ToggleTheme />
-        {session ? (
-          <form
-            action={async () => {
-              "use server";
-              await signOut({ redirectTo: "/" });
-            }}
-          >
-            <Button>Logout</Button>
-          </form>
+        <Link href="/post-job" className={buttonVariants({ size: "lg" })}>
+          Post Job
+        </Link>
+        {session?.user ? (
+          <UserDropdown
+            email={session.user.email as string}
+            image={session.user.image as string}
+            name={session.user.name as string}
+          />
         ) : (
           <Link
             href="/login"
