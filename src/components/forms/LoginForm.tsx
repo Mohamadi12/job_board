@@ -9,8 +9,8 @@ import {
 import Github from "../../../public/icons/github";
 import Google from "../../../public/icons/google";
 import { auth, signIn } from "@/app/utils/auth";
-import SubmitButton from "../general/SubmitButton";
 import { redirect } from "next/navigation";
+import { SubmitButton } from "../general/SubmitButton";
 
 const LoginForm = async () => {
   const session = await auth();
