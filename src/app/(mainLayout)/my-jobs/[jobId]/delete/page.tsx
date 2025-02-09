@@ -26,7 +26,7 @@ const DeleteJobPage = async ({ params }: { params: Params }) => {
           account and remove your data from our servers.
         </CardDescription>
       </CardHeader>
-      <CardFooter className="flex justify-end gap-4">
+      <CardFooter className="flex items-center justify-between">
         <Link
           href={`/my-jobs`}
           className={buttonVariants({ variant: "outline" })}

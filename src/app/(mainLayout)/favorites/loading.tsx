@@ -1,8 +1,8 @@
 import JobListingsLoading from "@/components/general/JobListingsLoading";
 import React from "react";
 
-const LoadingJobs = () => {
+const LoadingFavorites = () => {
   return <JobListingsLoading />;
 };
 
-export default LoadingJobs;
+export default LoadingFavorites;
